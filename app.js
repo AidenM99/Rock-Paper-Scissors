@@ -1,6 +1,4 @@
 const playerSelection = "paper";
-const computerSelection = computerPlay();
-
 
 /*****Computer will pick either rock paper or scissors*****/
 function computerPlay() {
@@ -11,7 +9,8 @@ function computerPlay() {
 }
 
 /*****Player's selection will be compared against the computer's selection*****/
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection) {
+    const computerSelection = computerPlay();
     if (playerSelection==computerSelection) {
         console.log ("It's a tie!");
     }
@@ -38,7 +37,14 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+function playGame() {
+    for(i=0; i<5; i++) {
+        playRound(playerSelection);
+    }
+}
+playGame();
+
+
+
 
 
