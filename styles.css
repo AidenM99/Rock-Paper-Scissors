@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+body {
+    font-family: 'Bubblegum Sans', cursive;
+    margin:0;
+    width:100%;
+    text-align: center;
+}
+
+.big-heading {
+    font-size:3.5rem;
+}
+
+.hr {
+    border:1px solid black;
+}
+
+.choice-text {
+    font-size:2.5rem;
+}
+
+.score {
+    display:flex;
+    justify-content: center;
+}
+
+.player-score-container {
+    margin-right:150px;
+}
+
+.placeholder {
+    visibility:;
+}
+
+.choices {
+    margin-top:75px;
+}
+
+.choice {
+    margin:0 50px;
+}
+
+.choice:hover {
+    transform:scale(1.2);
+    transition: 250ms;
+}

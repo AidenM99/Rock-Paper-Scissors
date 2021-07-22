@@ -37,12 +37,15 @@ function playRound(playerSelection) {
     }
 }
 
+/*****Function to playRound a total of five times*****/
 function playGame() {
-    for(i=0; i<5; i++) {
-        playRound(playerSelection);
+    for (i=0; i<5; i++) {
+        playRound(playerSelection)
     }
 }
 playGame();
+
+
 
 
 
