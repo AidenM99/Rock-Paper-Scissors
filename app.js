@@ -39,6 +39,7 @@ function playRound(playerSelection) {
 
     const computerSelection = computerPlay();
 
+    /*****Checks score before conditionals are assessed*****/
     if (playerScoreValue == 5) {
         playerScoreValue=0;
         computerScoreValue=0;
@@ -55,13 +56,13 @@ function playRound(playerSelection) {
             text.innerText = "You lose, paper covers rock!";
             computerScoreValue++;
         }else{
-            text.innerText = "You win, rock beats scissors!";
+            text.innerText = "You win, rock smashes scissors!";
             playerScoreValue++;
         }
     }
     else if (playerSelection=="paper") {
         if (computerSelection=="scissors") {
-            text.innerText = "You lose, scissors cut paper!";
+            text.innerText = "You lose, scissors cuts paper!";
             computerScoreValue++;
         }else{
             text.innerText = "You win, paper covers rock!";
@@ -70,10 +71,10 @@ function playRound(playerSelection) {
     }
     else if (playerSelection=="scissors") {
         if (computerSelection=="rock") {
-            text.innerText = "You lose, rock beats scissors!";
+            text.innerText = "You lose, rock smashes scissors!";
             computerScoreValue++;
         }else{
-            text.innerText = "You win, scissors cut paper!";
+            text.innerText = "You win, scissors cuts paper!";
             playerScoreValue++;
         }
     }
@@ -82,7 +83,7 @@ function playRound(playerSelection) {
     checkScore(playerScoreValue, computerScoreValue)
 };
 
-
+/*****Check score function*****/
 function checkScore(playerScoreValue, computerScoreValue) {
     const text = document.querySelector(".choice-text");
     if (playerScoreValue == 5) {
