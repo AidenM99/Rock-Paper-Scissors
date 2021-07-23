@@ -28,8 +28,16 @@ body {
     margin-right:150px;
 }
 
-.placeholder {
+.player-icon {
     visibility:hidden;
+}
+
+.computer-icon {
+    visibility:hidden;
+}
+
+.active {
+    visibility:visible;
 }
 
 .choices {

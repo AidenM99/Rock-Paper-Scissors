@@ -10,41 +10,52 @@ choice.forEach(function(item) {
 
 /*****Computer selection*****/
 function computerPlay() {
-    const choices = ['rock', 'paper', 'scissors'];
+    const choices = ["rock", "paper", "scissors"];
     const randomNumber = Math.floor(Math.random()*choices.length);
     const computerChoice = choices[randomNumber];
+
+    const computerIcon = document.querySelector (".computer-icon");
+    computerIcon.classList.remove ("fa-hand-rock", "fa-hand-paper", "fa-hand-scissors");
+    computerIcon.classList.add (`fa-hand-${computerChoice}`, "active");
+    
     return computerChoice;
-}
+};
 
 
 /*****Player selection is compared to computer selection*****/
-function playRound(playerSelection) {
+function playRound(playerSelection) {   
+    const playerIcon = document.querySelector (".player-icon");
+    playerIcon.classList.remove  ("fa-hand-rock", "fa-hand-paper", "fa-hand-scissors");
+    playerIcon.classList.add (`fa-hand-${playerSelection}`, "active");
+
+    const text = document.querySelector (".choice-text")
+
     const computerSelection = computerPlay();
     if (playerSelection==computerSelection) {
-        console.log ("It's a tie!");
+        text.innerText = "It's a tie!";
     }
     else if (playerSelection=="rock") {
         if (computerSelection=="paper") {
-            console.log ("You lose, paper covers rock!");
+            text.innerText = "You lose, paper covers rock!";
         }else{
-            console.log ("You win, rock beats scissors!")
+            text.innerText = "You win, rock beats scissors!";
         }
     }
     else if (playerSelection=="paper") {
         if (computerSelection=="scissors") {
-            console.log ("You lose, scissors cut paper!");
+            text.innerText = "You lose, scissors cut paper!";
         }else{
-            console.log ("You win, paper covers rock!");
+            text.innerText = "You win, paper covers rock!";
         }
     }
     else if (playerSelection=="scissors") {
         if (computerSelection=="rock") {
-            console.log ("You lose, rock beats scissors!");
+            text.innerText = "You lose, rock beats scissors!";
         }else{
-            console.log ("You win, scissors cut paper!");
+            text.innerText = "You win, scissors cut paper!";
         }
     }
-}
+};
 
 
 /*****Invokes playRound function five times*****/
