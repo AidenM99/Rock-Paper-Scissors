@@ -7,6 +7,7 @@ body {
     text-align: center;
 }
 
+/*****Header*****/
 .big-heading {
     font-size:3.5rem;
 }
@@ -15,8 +16,11 @@ body {
     border:1px solid black;
 }
 
+
+/*****Main*****/
 .choice-text {
     font-size:2.5rem;
+    margin: 50px 0 40px;
 }
 
 .score {
@@ -45,11 +49,35 @@ body {
 }
 
 .choice {
-    margin:0 50px;
+    margin:0 35px;
 }
 
 .choice:hover {
     transform:scale(1.2);
     transition: 250ms;
     cursor:pointer;
+}
+
+
+/*****Responsive Layout*****/  
+@media(max-width:700px) {
+    .big-heading {
+        font-size:2.5rem;
+    }
+    
+    .choice-text {
+        font-size:1.5rem;
+    }
+
+    .fa-5x:before {
+        font-size:60px;
+    }
+
+    .player-score-container {
+        margin-right:100px;
+    }
+
+    .choice {
+        margin:0 20px;
+    }
 }
