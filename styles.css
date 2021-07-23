@@ -29,7 +29,7 @@ body {
 }
 
 .placeholder {
-    visibility:;
+    visibility:hidden;
 }
 
 .choices {
@@ -43,4 +43,5 @@ body {
 .choice:hover {
     transform:scale(1.2);
     transition: 250ms;
+    cursor:pointer;
 }

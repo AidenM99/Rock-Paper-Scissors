@@ -1,6 +1,14 @@
-const playerSelection = "paper";
+/*****Player selection*****/
+const choice = document.querySelectorAll(".choice");
+choice.forEach(function(item) {
+    item.addEventListener("click", (e) => {
+        const playerSelection = e.target.id;
+        playRound(playerSelection);
+    })
+});
 
-/*****Computer will pick either rock paper or scissors*****/
+
+/*****Computer selection*****/
 function computerPlay() {
     const choices = ['rock', 'paper', 'scissors'];
     const randomNumber = Math.floor(Math.random()*choices.length);
@@ -8,7 +16,8 @@ function computerPlay() {
     return computerChoice;
 }
 
-/*****Player's selection will be compared against the computer's selection*****/
+
+/*****Player selection is compared to computer selection*****/
 function playRound(playerSelection) {
     const computerSelection = computerPlay();
     if (playerSelection==computerSelection) {
@@ -37,13 +46,14 @@ function playRound(playerSelection) {
     }
 }
 
-/*****Function to playRound a total of five times*****/
+
+/*****Invokes playRound function five times*****/
 function playGame() {
     for (i=0; i<5; i++) {
         playRound(playerSelection)
     }
 }
-playGame();
+
 
 
 
