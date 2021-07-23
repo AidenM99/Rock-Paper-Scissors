@@ -1,7 +1,7 @@
 let playerScoreValue = 0;
 let computerScoreValue = 0;
 
-    
+
 /*****Player selection*****/
 const choice = document.querySelectorAll(".choice");
 choice.forEach(function(item) {
@@ -33,20 +33,19 @@ function playRound(playerSelection) {
 
     const text = document.querySelector(".choice-text");
 
-    /*****Checks the score*****/
-    if (playerScoreValue == 5) {
-        text.innerText = "Player One Wins!";
-        return;
-    }else if (computerScoreValue == 5) {
-        text.innerText = "Computers Wins!";
-        return;
-    };
-
     const playerIcon = document.querySelector (".player-icon");
     playerIcon.classList.remove  ("fa-hand-rock", "fa-hand-paper", "fa-hand-scissors");
     playerIcon.classList.add (`fa-hand-${playerSelection}`, "active");
 
     const computerSelection = computerPlay();
+
+    if (playerScoreValue == 5) {
+        playerScoreValue=0;
+        computerScoreValue=0;
+    }else if (computerScoreValue == 5) {
+        computerScoreValue=0;
+        playerScoreValue=0;
+    };
 
     if (playerSelection==computerSelection) {
         text.innerText = "It's a tie!";
@@ -80,6 +79,17 @@ function playRound(playerSelection) {
     }
     playerScore.innerText = playerScoreValue;
     computerScore.innerText = computerScoreValue; 
+    checkScore(playerScoreValue, computerScoreValue)
+};
+
+
+function checkScore(playerScoreValue, computerScoreValue) {
+    const text = document.querySelector(".choice-text");
+    if (playerScoreValue == 5) {
+        text.innerText = "Player One Wins!";
+    }else if (computerScoreValue == 5) {
+        text.innerText = "Computer Wins!";
+    };
 };
 
 
